@@ -275,3 +275,116 @@ repeat {
 } while x < 5
 
 print(x)
+
+//옵셔널
+
+var name: String?
+
+var optionalName: String? = "Gunter"
+
+//var requiredName: String = optionalName
+
+//옵셔널 바인딩
+
+var number2: Int? = 3
+print(number2!)
+
+if let result = number2 {
+    print(result)
+} else {
+    
+}
+
+func test() {
+    let number3: Int? = 5
+    guard let result = number3 else { return }
+    print(result)
+}
+
+test()
+
+let value: Int? = 6
+if value == 6 {
+    print("value가 6입니다.")
+} else {
+    print("value가 6이 아닙니다.")
+}
+//묵시적 옵셔널 해제
+let string = "12"
+var stringToInt: Int! = Int(string)
+print(stringToInt + 1)
+
+//구조체
+
+struct User {
+    var nickname: String
+    var age: Int
+    
+    func information() {
+        print("\(nickname) \(age)")
+    }
+}
+
+var user = User(nickname: "gunter", age: 23)
+
+user.nickname
+user.nickname = "ablert"
+user.nickname
+
+user.information()
+
+//클래스
+
+class Dog {
+    var name: String = ""
+    var age: Int = 0
+    
+    func introduce() {
+        print("name \(name) age \(age)")
+    }
+}
+
+var dog = Dog()
+dog.name = "CoCo"
+dog.age = 3
+dog.name
+dog.age
+
+dog.introduce()
+
+/*
+ init(매개변수: 타입, ...) {
+    // 프로퍼티 초기화
+    // 인스턴스 생성시 필요한 설정을 해주는 코드 작성
+ }
+ */
+
+class People {
+    var nickname: String
+    var age: Int
+    
+    init(nickname: String, age: Int) {
+        self.nickname = nickname
+        self.age = age
+    }
+    
+    init(age: Int) {
+        self.nickname = "ablert"
+        self.age = age
+    }
+    
+    deinit {
+        print("deint user")
+    }
+}
+
+var people = User(nickname: "gunter", age: 23)
+user.nickname
+user.age
+
+var people2 = People(age: 27)
+people2.nickname
+people2.age
+
+var people3: People? = People(age: 23)
+people3 = nil
