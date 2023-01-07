@@ -388,3 +388,77 @@ people2.age
 
 var people3: People? = People(age: 23)
 people3 = nil
+
+//프로퍼티
+struct Bear {
+    var name: String
+    let gender: String
+}
+
+var bear = Bear(name: "gunter", gender: "Male")
+print(bear)
+
+bear.name = "변백현"
+
+let bear2 = Bear(name: "gunter", gender: "male")
+
+class Panda {
+    var name: String
+    let gender: String
+    
+    init(name: String, gender: String) {
+        self.name = name
+        self.gender = gender
+    }
+}
+
+let panda = Panda(name: "json", gender: "male")
+panda.name = "gunter"
+print(panda.name)
+
+struct Stock {
+    var averagePrice: Int
+    var quantity: Int
+    var purchasePrice: Int {
+        get {
+            return averagePrice * quantity
+        }
+        set(newPrice) {
+            averagePrice = newPrice / quantity
+        }
+    }
+}
+
+var stock = Stock(averagePrice: 2300, quantity: 3)
+print(stock)
+stock.purchasePrice
+stock.purchasePrice = 3000
+stock.averagePrice
+
+class Account {
+    var credit: Int = 0 {
+        // 소괄호 이름 지정
+        willSet {
+            print("잔액이 \(credit)원에서 \(newValue)원으로 변경될 예정입니다.")
+        }
+        
+        didSet {
+            print("잔액이 \(oldValue)원에서 \(credit)원으로 변경되었습니다.")
+        }
+    }
+}
+
+var account = Account()
+account.credit = 1000
+
+struct SomeStructure {
+    static var storedTypeProperty = "Some vlaue." // 스토어
+    static var computedTypeProperty: Int { //컴퓨디드
+        return 1
+    }
+}
+
+SomeStructure.computedTypeProperty
+SomeStructure.storedTypeProperty
+SomeStructure.storedTypeProperty = "hello"
+SomeStructure.storedTypeProperty
