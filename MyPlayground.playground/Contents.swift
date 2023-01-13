@@ -547,3 +547,146 @@ class AutomaticCar: Car {
 let automatic = AutomaticCar()
 automatic.currentSpeed = 35.0
 print("AutomaticCar: \(automatic.description)")
+
+class MediaItem {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class Movie: MediaItem {
+    var director: String
+    init(name: String, director: String) {
+        self.director = director
+        super.init(name: name)
+    }
+}
+
+class Song: MediaItem {
+    var artist: String
+    init(name: String, artist: String) {
+        self.artist = artist
+        super.init(name: name)
+    }
+}
+
+let library = [
+ Movie(name: "기생충", director: "봉준호"),
+ Song(name: "Butter", artist: "BTS"),
+ Movie(name: "올드보이", director: "박찬욱"),
+ Song(name: "Wonderwall", artist: "Oasis"),
+ Song(name: "Rain", artist: "이적")
+]
+
+
+
+var movieCount = 0
+var songCount = 0
+
+for item in library {
+    if item is Movie {
+        movieCount += 1
+    } else if item is Song {
+        songCount += 1
+    }
+}
+
+print("Media library contains \(movieCount) movie and \(songCount) songs")
+
+for item in library {
+    if let movie = item as? Movie {
+        print("Movie: \(movie.name), dir. \(movie.director)")
+    } else if let song = item as? Song {
+        print("Song: \(song.name), by \(song.artist)")
+    }
+}
+
+//assert문
+
+var num3 = 0
+assert(num3 == 0)
+
+num3  = 2
+//assert(num3 == 0, "값이 0이 아닙니다")
+
+//guard문
+/*
+ guard 조건 else {
+ // 조건이 false 이면 else 구문이 실행되고
+ return or throw or break 를 통해 이 후 코드를 실행하지 않도록 한다.
+ }
+ */
+
+func guardTest(num4: Int?) {
+    guard let num4 = num4 else { return }
+    print(num4)
+}
+
+guardTest(num4: 2)
+guardTest(num4: nil)
+
+//프로토콜
+/*
+ protocol 이름 {
+ 
+ }
+ */
+
+protocol SomeProtocol {
+    
+}
+
+protocol SomeProtocol2 {
+    
+}
+
+struct SomeStructure2: SomeProtocol, SomeProtocol2 {
+    
+}
+
+/*
+ class SomeClass: SomeSuperclass, FirstProtocol, AnotherProtocol
+    {
+ 
+ }
+ */
+
+protocol FirstProtocol {
+    var name: Int { get set}
+    var age: Int { get }
+}
+
+protocol AnotherProtocol {
+    static var someTypeProperty: Int { get set }
+}
+
+protocol FullyNames {
+    var fullName: String { get set }
+    func printFullName()
+}
+
+struct Person: FullyNames {
+    var fullName: String
+    
+    func printFullName() {
+        print(fullName)
+    }
+}
+
+protocol SomeProtocol3 {
+    func someTypeMethod()
+}
+
+protocol SomeProtocol4 {
+    init(someParameter: Int)
+}
+
+protocol SomeProtocol5 {
+    init()
+}
+
+class SomeClass2: SomeProtocol5 {
+    required init() {
+    }
+}
