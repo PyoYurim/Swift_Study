@@ -690,3 +690,171 @@ class SomeClass2: SomeProtocol5 {
     required init() {
     }
 }
+
+//열거형
+
+enum CompassPoint: String {
+    case north = "북"
+    case south = "남"
+    case east = "동"
+    case west = "서"
+}
+
+var direction = CompassPoint.east
+direction = .west
+
+switch direction {
+case .north:
+    print(direction.rawValue)
+    
+case .south:
+    print(direction.rawValue)
+    
+case .east:
+    print(direction.rawValue)
+    
+case .west:
+    print(direction.rawValue)
+}
+
+let direction2 = CompassPoint(rawValue: "남")
+
+enum PhoneError {
+    case unknown
+    case batteryLow(String)
+}
+
+let error = PhoneError.batteryLow("배터리가 곧 방전됩니다.")
+
+switch error {
+case .batteryLow(let message):
+    print(message)
+    
+case .unknown:
+    print("알 수 없는 에러입니다.")
+}
+
+//옵셔널 체이닝
+
+struct Developer {
+    let name: String
+}
+
+struct Company {
+    let name: String
+    var developer: Developer?
+}
+
+var developer = Developer(name: "han")
+var company = Company(name: "Gunter", developer: developer)
+print(company.developer)
+print(company.developer?.name)
+print(company.developer!.name)
+
+//try-catch
+
+enum PhoneError1: Error {
+    case unknown
+    case batteryLow(batteryLevel: Int)
+}
+
+//throw PhoneError1.batteryLow(batteryLevel: 20)
+
+func checkPhoneBatteryStatus(batteryLevel: Int) throws -> String {
+    guard batteryLevel != -1 else { throw PhoneError1.unknown }
+    guard batteryLevel > 20 else { throw
+        PhoneError1.batteryLow(batteryLevel: 20)}
+    return "배터리 상태가 정상입니다."
+}
+
+/*
+ do {
+  try 오류 발생 가능코드
+ } catch 오류 패턴 {
+  처리 코드
+ }
+ */
+
+do {
+    try checkPhoneBatteryStatus(batteryLevel: 20)
+} catch PhoneError1.unknown {
+    print("알 수 없는 에러입니다.")
+} catch PhoneError1.batteryLow(let batteryLebel) {
+    print("배터리 전원 부족 남은 배터리 : \(batteryLebel)%")
+} catch {
+    print("그 외 오류 발생 : \(error)")
+}
+
+let status = try? checkPhoneBatteryStatus(batteryLevel: 30)
+print(status)
+
+let status2 = try! checkPhoneBatteryStatus(batteryLevel: 30)
+print(status2)
+
+
+/*
+ { (매개 변수) -> 리턴 타입 in
+    실행 구문
+ }
+ */
+
+let hello1 = { () -> () in
+    print("hello")
+}
+
+hello1()
+
+let hello2 = { (name: String) -> String in
+    return "Hello, \(name)"
+}
+
+hello2("Gunter")
+
+func doSomething(closure: () -> ()) {
+    closure()
+}
+
+doSomething(closure: { () -> () in
+    print("hello")
+})
+
+doSomething() {
+    print("hello2")
+}
+func doSomething2() -> () -> () {
+    return { () -> () in
+        print("hello4")
+    }
+}
+
+doSomething2()()
+
+func doSomething2(success: () -> (), fail: () -> ()) {
+    
+}
+
+
+
+func doSomething3(closure: (Int, Int, Int) -> Int) {
+    closure(1,2,3)
+}
+
+doSomething3(closure: { (a, b, c) in
+    return a+b+c
+})
+
+doSomething3(closure: {
+    return $0+$1+$2
+})
+
+doSomething3(closure: {
+    $0+$1+$2
+})
+
+doSomething3() {
+    $0+$1+$2
+}
+
+doSomething3 {
+    $0+$1+$2
+}
