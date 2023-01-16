@@ -690,6 +690,36 @@ class SomeClass2: SomeProtocol5 {
     required init() {
     }
 }
+//익스텐션
+
+/*
+ extension SomeType {
+    // 추가 기능
+ }
+ */
+
+extension Int {
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+    
+    var isOdd: Bool {
+        return self % 2 == 1
+    }
+}
+
+var number3 = 3
+number.isOdd
+number.isEven
+
+extension String {
+    func convertToInt() -> Int? {
+        return Int(self)
+    }
+}
+
+var string2 = "0"
+string2.convertToInt()
 
 //열거형
 
@@ -858,3 +888,26 @@ doSomething3() {
 doSomething3 {
     $0+$1+$2
 }
+
+//고차함수
+
+//map
+let numbers2 = [0,1,2,3]
+let mapArray = numbers2.map { (number) -> Int in
+    return number * 2
+}
+print("map \(mapArray)")
+
+// filter
+let intArray = [10,5,20,13,4]
+let filterArray = intArray.filter { $0 > 5 }
+print("filter \(filterArray)")
+
+// reduce
+let someArray = [1,2,3,4,5]
+let reduceResult = someArray.reduce(2) {
+    (result: Int, element: Int) -> Int in
+    return result + element
+}
+
+print("reduce \(reduceResult)")
