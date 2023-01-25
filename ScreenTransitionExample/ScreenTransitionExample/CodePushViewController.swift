@@ -15,6 +15,7 @@ class CodePushViewController: UIViewController {
         super.viewDidLoad()
         if let name = name {
             self.nameLabel.text = name
+            self.nameLabel.sizeToFit()
         }
     }
     @IBAction func tapBackButton(_ sender: UIButton) {
