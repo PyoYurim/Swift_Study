@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		394B12F929D013850008F82A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B12F829D013850008F82A /* MainViewController.swift */; };
+		394B12FB29D037440008F82A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 394B12FA29D037440008F82A /* GoogleService-Info.plist */; };
 		394CC69D29C3707F0095CEF8 /* EnterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394CC69C29C3707F0095CEF8 /* EnterEmailViewController.swift */; };
 		39A3C06029C2F2EB00414831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3C05F29C2F2EB00414831 /* AppDelegate.swift */; };
 		39A3C06229C2F2EB00414831 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3C06129C2F2EB00414831 /* SceneDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		394B12F829D013850008F82A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		394B12FA29D037440008F82A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		394CC69C29C3707F0095CEF8 /* EnterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEmailViewController.swift; sourceTree = "<group>"; };
 		39A3C05C29C2F2EB00414831 /* SpotifyLoginSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyLoginSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A3C05F29C2F2EB00414831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +69,9 @@
 				39A3C06829C2F2EC00414831 /* Assets.xcassets */,
 				39A3C06A29C2F2EC00414831 /* LaunchScreen.storyboard */,
 				39A3C06D29C2F2EC00414831 /* Info.plist */,
+				394B12FA29D037440008F82A /* GoogleService-Info.plist */,
 				394CC69C29C3707F0095CEF8 /* EnterEmailViewController.swift */,
+				394B12F829D013850008F82A /* MainViewController.swift */,
 			);
 			path = SpotifyLoginSampleApp;
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A3C06C29C2F2EC00414831 /* LaunchScreen.storyboard in Resources */,
+				394B12FB29D037440008F82A /* GoogleService-Info.plist in Resources */,
 				39A3C06929C2F2EC00414831 /* Assets.xcassets in Resources */,
 				39A3C06729C2F2EB00414831 /* Main.storyboard in Resources */,
 			);
@@ -145,6 +152,7 @@
 				39A3C06029C2F2EB00414831 /* AppDelegate.swift in Sources */,
 				394CC69D29C3707F0095CEF8 /* EnterEmailViewController.swift in Sources */,
 				39A3C06229C2F2EB00414831 /* SceneDelegate.swift in Sources */,
+				394B12F929D013850008F82A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
