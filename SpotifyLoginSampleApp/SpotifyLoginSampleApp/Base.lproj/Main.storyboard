@@ -151,7 +151,7 @@
                                             <constraint firstAttribute="height" constant="50" id="DvE-Vl-2Ta"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-Pl-jh1">
                                         <rect key="frame" x="0.0" y="114" width="333" height="24"/>
@@ -159,13 +159,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1D-ZD-XC9">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1D-ZD-XC9" userLabel="passwordTextField">
                                         <rect key="frame" x="0.0" y="158" width="333" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2Yf-KL-E5L"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXO-JU-SY4">
                                         <rect key="frame" x="0.0" y="228" width="333" height="0.0"/>
@@ -204,10 +204,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="이메일/비밀번호 입력하기" id="guW-NJ-aFk"/>
                     <connections>
-                        <outlet property="emailTextField" destination="UN6-Qj-eOh" id="SLd-39-nyc"/>
+                        <outlet property="emailTextField" destination="UN6-Qj-eOh" id="k3W-Fm-7LI"/>
                         <outlet property="errorMessageLabel" destination="cXO-JU-SY4" id="aBx-70-EX9"/>
                         <outlet property="nextButton" destination="mLY-em-B36" id="MEg-MX-Liu"/>
-                        <outlet property="passwordTextField" destination="UN6-Qj-eOh" id="vuu-Yp-eun"/>
+                        <outlet property="passwordTextField" destination="F1D-ZD-XC9" id="RQh-Sr-iB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5k5-In-4uO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -217,7 +217,7 @@
         <!--Main View Controller-->
         <scene sceneID="mf8-or-l15">
             <objects>
-                <viewController id="l0N-dG-XtJ" customClass="MainViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="l0N-dG-XtJ" customClass="MainViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="42W-Fe-4ph">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
